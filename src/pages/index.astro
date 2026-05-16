@@ -1,0 +1,295 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const principles = [
+  { n: "01", t: "One pen.",     d: "A single black Sharpie. No filters, no undo." },
+  { n: "02", t: "One square.",  d: "5″ × 5″. The smallest canvas. The biggest signal." },
+  { n: "03", t: "One voice.",   d: "Yours. The platform never draws for you." },
+  { n: "04", t: "One verdict.", d: "AI reads it. The world votes on it. The archive remembers." },
+];
+
+const numbers = [
+  { k: "Kit",        v: "At cost",      s: "Pads + Sharpie. Zero markup." },
+  { k: "Format",     v: "5″ × 5″",      s: "Always square. Always paper." },
+  { k: "Analysis",   v: "Free",         s: "Every upload. Every time." },
+  { k: "Subscriptions", v: "None",      s: "Forever." },
+];
+---
+
+<Layout>
+  <!-- NAV -->
+  <header class="border-b" style="border-color: var(--color-rule);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="inline-block w-5 h-5" style="background: var(--color-ink);"></span>
+        <span class="mono text-sm tracking-[0.2em] uppercase">Human Squares</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 mono text-xs uppercase tracking-[0.18em]">
+        <a href="#how" class="hover:text-[color:var(--color-accent)]">How it works</a>
+        <a href="#kit" class="hover:text-[color:var(--color-accent)]">The Kit</a>
+        <a href="#community" class="hover:text-[color:var(--color-accent)]">Community</a>
+        <a href="#waitlist" class="square-btn square-btn-primary !px-4 !py-2">Reserve a square</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-28 lg:pt-32 lg:pb-40 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-mute);">
+          <span class="inline-block w-2 h-2 mr-2 align-middle" style="background: var(--color-accent);"></span>
+          Now accepting Founders Squares · #001–#1000
+        </p>
+        <h1 class="serif mt-6 text-[clamp(3rem,8vw,7rem)] leading-[0.95]">
+          Draw on a square.<br />
+          <span class="italic">The world responds.</span>
+        </h1>
+        <p class="mt-8 max-w-xl text-lg leading-relaxed" style="color: var(--color-ink-soft);">
+          Human Squares is a global creative network where artists draw freely inside
+          a single square — then share it, get it analyzed by AI, and let the
+          community vote it into the canon. <span class="serif italic">One pen. One mind. Infinite expression.</span>
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#waitlist" class="square-btn square-btn-primary">Get the kit →</a>
+          <a href="#how" class="square-btn square-btn-ghost">How it works</a>
+        </div>
+        <p class="mt-8 mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">
+          Kit shipped at cost · No subscriptions · No filters
+        </p>
+      </div>
+
+      <!-- Animated square -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative">
+          <svg viewBox="0 0 320 320" class="w-[280px] h-[280px] md:w-[360px] md:h-[360px]" aria-hidden="true">
+            <rect
+              x="20" y="20" width="280" height="280"
+              fill="none"
+              stroke="var(--color-ink)"
+              stroke-width="3"
+              stroke-linecap="square"
+              class="draw-square"
+            />
+            <text
+              x="160" y="180"
+              text-anchor="middle"
+              class="serif"
+              style="font-size: 96px; font-style: italic; fill: var(--color-ink);"
+            >?</text>
+          </svg>
+          <p class="absolute -bottom-2 left-1/2 -translate-x-1/2 mono text-[10px] uppercase tracking-[0.3em] whitespace-nowrap" style="color: var(--color-mute);">
+            Square #0000 · Untitled
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <section class="border-y overflow-hidden" style="border-color: var(--color-rule); background: var(--color-ink); color: var(--color-paper);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center gap-12 mono text-xs uppercase tracking-[0.3em] whitespace-nowrap overflow-x-auto">
+      <span>Honest art lives in a square</span>
+      <span style="color: var(--color-accent);">●</span>
+      <span>50 pads + 1 sharpie · at cost</span>
+      <span style="color: var(--color-accent);">●</span>
+      <span>AI reads it · the world votes</span>
+      <span style="color: var(--color-accent);">●</span>
+      <span>No filters · no undo · no rectangles</span>
+      <span style="color: var(--color-accent);">●</span>
+      <span>Founders Squares #001–#1000</span>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="how" class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-mute);">§ 01 — How it works</p>
+        <h2 class="serif text-5xl lg:text-6xl leading-[1] mt-4">
+          Four rules.<br />
+          <span class="italic">Infinite squares.</span>
+        </h2>
+        <p class="mt-6 max-w-md" style="color: var(--color-ink-soft);">
+          We believe the smallest format produces the most honest art. So we
+          made the rules small too.
+        </p>
+      </div>
+      <div class="lg:col-span-8 grid sm:grid-cols-2 gap-px" style="background: var(--color-rule);">
+        {principles.map(({ n, t, d }) => (
+          <div class="p-8 lg:p-10" style="background: var(--color-paper);">
+            <p class="mono text-xs tracking-[0.25em]" style="color: var(--color-accent);">{n}</p>
+            <h3 class="serif text-3xl mt-3">{t}</h3>
+            <p class="mt-3 text-sm leading-relaxed" style="color: var(--color-ink-soft);">{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- KIT -->
+  <section id="kit" class="border-y" style="border-color: var(--color-rule); background: #f1ede4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-mute);">§ 02 — The Kit</p>
+        <h2 class="serif text-5xl lg:text-6xl leading-[1] mt-4">
+          Premium paper.<br />
+          A real Sharpie.<br />
+          <span class="italic">Zero markup.</span>
+        </h2>
+        <ul class="mt-8 space-y-4 mono text-sm">
+          <li class="flex items-start gap-3"><span style="color: var(--color-accent);">▸</span> 50 heavyweight 200gsm bleed-resistant pads</li>
+          <li class="flex items-start gap-3"><span style="color: var(--color-accent);">▸</span> One black Sharpie. The only color allowed.</li>
+          <li class="flex items-start gap-3"><span style="color: var(--color-accent);">▸</span> True 5″ × 5″ — never a rectangle</li>
+          <li class="flex items-start gap-3"><span style="color: var(--color-accent);">▸</span> Recyclable kraft sleeve · ships flat in 48h</li>
+        </ul>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#waitlist" class="square-btn square-btn-primary">Reserve the kit →</a>
+          <span class="mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">At cost · Free shipping over $25</span>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 flex justify-center">
+        <div class="relative w-full max-w-md aspect-square">
+          <div class="absolute inset-0 rotate-[-3deg]" style="background: var(--color-paper); border: 1.5px solid var(--color-ink); box-shadow: 8px 8px 0 var(--color-ink);"></div>
+          <div class="absolute inset-0 rotate-[2deg] translate-x-4 translate-y-2" style="background: var(--color-paper); border: 1.5px solid var(--color-ink);"></div>
+          <div class="absolute inset-0 flex items-center justify-center" style="background: var(--color-paper); border: 1.5px solid var(--color-ink);">
+            <div class="text-center">
+              <p class="mono text-[10px] uppercase tracking-[0.3em]" style="color: var(--color-mute);">The Kit · v.001</p>
+              <p class="serif italic text-7xl mt-4">□</p>
+              <p class="mono text-xs uppercase tracking-[0.25em] mt-4">50 pads · 1 pen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background: var(--color-rule);">
+      {numbers.map(({ k, v, s }) => (
+        <div class="p-8 lg:p-10" style="background: var(--color-paper);">
+          <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-mute);">{k}</p>
+          <p class="serif text-5xl lg:text-6xl mt-2">{v}</p>
+          <p class="mt-3 text-sm" style="color: var(--color-ink-soft);">{s}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="border-t" style="border-color: var(--color-rule); background: var(--color-ink); color: var(--color-paper);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-accent);">§ 03 — The Community</p>
+        <h2 class="serif text-5xl lg:text-6xl leading-[1] mt-4">
+          Upload.<br />
+          Get read.<br />
+          <span class="italic" style="color: var(--color-accent);">Get seen.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 space-y-8">
+        <div>
+          <h3 class="serif text-2xl">Every square is read by AI.</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: #c9c9c9;">
+            Our analysis layer doesn't generate art — it understands it. You
+            get a one-line interpretation, mood signature, and lineage of
+            visual influences. Free, every time.
+          </p>
+        </div>
+        <div>
+          <h3 class="serif text-2xl">The world votes.</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: #c9c9c9;">
+            Up votes. Down votes. Curated sets of nine. The community shapes
+            the daily, weekly, and yearly canon — and Square of the Year wins
+            a real cash prize and a gallery show.
+          </p>
+        </div>
+        <div>
+          <h3 class="serif text-2xl">Featured artists get paid.</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: #c9c9c9;">
+            Real money. Every feature. Every time. We don't sell your data and
+            we don't run banner ads. Ever.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="mono text-xs uppercase tracking-[0.25em]" style="color: var(--color-mute);">§ 04 — Be one of the first 1,000 squares</p>
+      <h2 class="serif text-5xl lg:text-7xl leading-[0.95] mt-6">
+        The kit drops in <span class="italic">14 days.</span>
+      </h2>
+      <p class="mt-6 max-w-xl mx-auto" style="color: var(--color-ink-soft);">
+        The first 1,000 sign-ups receive free shipping forever and a numbered
+        Founders Square — hand-stamped, never reissued.
+      </p>
+      <form
+        class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+        action="https://formspree.io/f/your-id"
+        method="POST"
+      >
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="your@email.com"
+          class="flex-1 px-5 py-4 mono text-sm bg-transparent focus:outline-none"
+          style="border: 1.5px solid var(--color-ink); color: var(--color-ink);"
+        />
+        <button type="submit" class="square-btn square-btn-primary">Reserve my square →</button>
+      </form>
+      <p class="mt-6 mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">
+        No spam. One email when the kit ships. <span class="blink">_</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t" style="border-color: var(--color-rule);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="inline-block w-4 h-4" style="background: var(--color-ink);"></span>
+          <span class="mono text-xs tracking-[0.2em] uppercase">Human Squares</span>
+        </div>
+        <p class="mt-4 text-sm" style="color: var(--color-mute);">
+          One pen. One square. <br />One mind. Infinite expression.
+        </p>
+      </div>
+      <div>
+        <p class="mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">Product</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#kit" class="hover:text-[color:var(--color-accent)]">The Kit</a></li>
+          <li><a href="#how" class="hover:text-[color:var(--color-accent)]">How it works</a></li>
+          <li><a href="#community" class="hover:text-[color:var(--color-accent)]">Community</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">Follow</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="https://instagram.com/humansquares" class="hover:text-[color:var(--color-accent)]">Instagram</a></li>
+          <li><a href="https://x.com/humansquares" class="hover:text-[color:var(--color-accent)]">X / Twitter</a></li>
+          <li><a href="https://tiktok.com/@humansquares" class="hover:text-[color:var(--color-accent)]">TikTok</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono text-xs uppercase tracking-[0.2em]" style="color: var(--color-mute);">Promise</p>
+        <ul class="mt-3 space-y-2 text-sm" style="color: var(--color-ink-soft);">
+          <li>Kit at cost. Always.</li>
+          <li>Featured artists paid.</li>
+          <li>No ads. No subscriptions.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t" style="border-color: var(--color-rule);">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 mono text-[10px] uppercase tracking-[0.25em]" style="color: var(--color-mute);">
+        <p>© 2026 Human Squares</p>
+        <p>Made on a square.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

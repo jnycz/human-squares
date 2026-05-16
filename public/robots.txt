@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://humansquares.com/sitemap-index.xml
